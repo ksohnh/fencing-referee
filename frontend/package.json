@@ -1,0 +1,13 @@
+{
+    "name": "fencing-annotation-ui",
+    "version": "1.0.0",
+    "scripts": {
+      "start": "serve -l 3000"
+    },
+    "dependencies": {
+      "konva": "^8.4.3"
+    },
+    "devDependencies": {
+      "serve": "^14.1.2"
+    }
+  }

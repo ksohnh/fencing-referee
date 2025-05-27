@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Fencing Annotation</title>
+  <style>
+    #stage-container { position: relative; width: 800px; height: 450px; }
+    video, canvas { position: absolute; top: 0; left: 0; }
+  </style>
+</head>
+<body>
+  <h1>Annotate Right-of-Way & Touch Events</h1>
+  <select id="video-select"></select>
+  <div id="stage-container">
+    <video id="video" src="${api}/videos/${filename}" controls width="800" height="450"></video>
+    <div id="konva-stage"></div>
+  </div>  <button id="save">Save Annotations</button>
+  <script src="https://unpkg.com/konva@8/konva.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
