@@ -33,9 +33,8 @@ async def upload_video(file: UploadFile = File(...)):
     with open(path, "wb") as buffer:
         shutil.copyfileobj(file.file, buffer)
 
-    # 4. Enqueue the frame-extraction job
-    extract_frames.delay(saved_filename, fps=1)
-
+    # 4. Enqueue the frame-extraction job for 10 fps by default…
+    extract_frames.delay(saved_filename, fps=10)
     # 5. Return the ID & original filename
     return {"video_id": vid_id, "filename": file.filename}
 
