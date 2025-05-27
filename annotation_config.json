@@ -1,0 +1,69 @@
+{
+  "annotation_config.json": {
+    "keypoint_model": "mediapipe",
+    "target_fps": 30,
+    "action_types": [
+      "preparation",
+      "simple_attack", 
+      "compound_attack",
+      "parry_riposte",
+      "counter_attack",
+      "simultaneous",
+      "remise",
+      "redoublement"
+    ],
+    "event_types": [
+      "attack_start",
+      "attack_end", 
+      "parry",
+      "hit_valid",
+      "hit_off_target",
+      "miss",
+      "priority_establish",
+      "priority_transfer",
+      "preparation_start",
+      "blade_contact",
+      "distance_close",
+      "distance_break"
+    ],
+    "sabre_specific": {
+      "right_of_way_rules": {
+        "attack_in_preparation": "attack beats preparation",
+        "simultaneous_threshold_ms": 40,
+        "compound_attack_max_tempo": 2,
+        "parry_riposte_priority": "immediate"
+      },
+      "valid_target_zones": [
+        "head",
+        "torso_front", 
+        "torso_back",
+        "arm_sword",
+        "arm_non_sword"
+      ],
+      "invalid_target_zones": [
+        "legs",
+        "below_waist"
+      ]
+    },
+    "annotation_window": 5.0,
+    "min_action_duration": 0.3,
+    "max_action_duration": 8.0,
+    "quality_thresholds": {
+      "pose_confidence": 0.7,
+      "blade_tracking_confidence": 0.8,
+      "temporal_precision_ms": 33
+    },
+    "auto_proposals": {
+      "motion_threshold_percentile": 75,
+      "audio_analysis": false,
+      "optical_flow_method": "lucas_kanade",
+      "min_motion_duration": 0.5
+    },
+    "export_formats": [
+      "json",
+      "csv", 
+      "coco_temporal",
+      "training_clips"
+    ]
+  }
+}
